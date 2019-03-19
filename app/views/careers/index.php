@@ -89,11 +89,7 @@
           </td>
           <td><a class='btn btn-info' href='careers/edit/<?php echo $career->id;?>'>Izmjeni</a></td>
           <td><?php echo ($career->status == 'available') ? 'Aktivan' : 'Neaktivan' ?></td>
-          <td>
-            <form action="careers/delete/<?php echo $career->id; ?>" method="post">
-            <input type="submit" value="Delete" class="btn btn-danger">
-            </form>
-          </td>
+          <td><button type="button" rel="<?php echo $career->id ?>" class="btn btn-danger delete_career_link" data-dismiss="modal">Izbriši</button></td>
           
             
       </tr>

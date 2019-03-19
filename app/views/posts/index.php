@@ -63,19 +63,18 @@
          
           <td><a class='btn btn-info' href='posts/edit/<?php echo $post->id;?>'>Izmjeni</a></td>
           <td><?php echo ($post->status == 'available') ? 'Aktivan' : 'Neaktivan' ?></td>
-          <td>  
-              <form action="posts/delete/<?php echo $post->id; ?>" method="post">
-                <input type="submit" value="Delete" class="btn btn-danger">
-              </form>
-          </td>
           
-            
-      </tr>
+              <td><button type="button" rel="<?php echo $post->id ?>" class="btn btn-danger delete_post_link" data-dismiss="modal">Izbriši</button></td>
+              
+     </tr>
       
-vhg<?php endforeach; ?>
+<?php endforeach; ?>
             
          </tbody>
-    </table>     
+    </table>
+
+
+    
     </section>
     <!-- /.content -->
   </div>

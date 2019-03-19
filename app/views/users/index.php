@@ -56,11 +56,7 @@
                  <td><?php echo $user->username; ?></td>
                  <td><?php echo $user->power; ?></td>
                  <td><a class='btn btn-info' href='users/edit/<?php echo $user->id;?>'>Izmjeni</a></td>
-                 <td>  
-                    <form action="users/delete/<?php echo $user->id; ?>" method="post">
-                        <input type="submit" value="Delete" class="btn btn-danger">
-                    </form>
-                 </td>
+                 <td><button type="button" rel="<?php echo $user->id ?>" class="btn btn-danger delete_user_link" data-dismiss="modal">Izbriši</button></td>
              </tr>
 
 

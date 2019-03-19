@@ -61,11 +61,7 @@
           </td>
           <td><a class='btn btn-info' href='products/edit/<?php echo $product->id;?>'>Izmjeni</a></td>
           <td><?php echo ($product->status == 'available') ? 'Aktivan' : 'Neaktivan' ?></td>
-          <td>  
-              <form action="products/delete/<?php echo $product->id; ?>" method="post">
-                <input type="submit" value="Delete" class="btn btn-danger">
-              </form>
-          </td>
+          <td><button type="button" rel="<?php echo $product->id ?>" class="btn btn-danger delete_product_link" data-dismiss="modal">Izbriši</button></td>
           
             
       </tr>

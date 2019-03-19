@@ -164,7 +164,36 @@ function changeStatus(text) {
 
 
 
-
+$(document).ready(function(){
+    $(".delete_post_link").on('click', function(){
+        var id = $(this).attr("rel");
+        var delete_url = "posts/delete/"+ id + " ";
+        $(".modal_delete_link").attr("action", delete_url);
+        $("#deleteModal").modal('show');
+    });
+    
+    $(".delete_career_link").on('click', function(){
+        var id = $(this).attr("rel");
+        var delete_url = "careers/delete/"+ id + " ";
+        $(".modal_delete_link").attr("action", delete_url);
+        $("#deleteModal").modal('show');
+    });
+    
+    $(".delete_product_link").on('click', function(){
+        var id = $(this).attr("rel");
+        var delete_url = "products/delete/"+ id + " ";
+        $(".modal_delete_link").attr("action", delete_url);
+        $("#deleteModal").modal('show');
+    });
+    
+    $(".delete_user_link").on('click', function(){
+        var id = $(this).attr("rel");
+        var delete_url = "users/delete/"+ id + " ";
+        $(".modal_delete_link").attr("action", delete_url);
+        $("#deleteModal").modal('show');
+    });
+    
+});
 
 
 
