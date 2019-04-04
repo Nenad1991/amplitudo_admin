@@ -1,8 +1,4 @@
-<?php if(!isset($_SESSION['user_id'])) : ?>
 
-<?php redirect('users/login'); ?>
-
-<?php else: ?>
 
 <?php require APPROOT . '/views/inc/header_index.php'; ?>
   <!-- Content Wrapper. Contains page content -->
@@ -81,4 +77,3 @@
   <!-- /.content-wrapper -->
 
 <?php require APPROOT . '/views/inc/footer_index.php'; ?>   
-<?php endif; ?>
