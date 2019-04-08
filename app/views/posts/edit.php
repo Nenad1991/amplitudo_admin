@@ -152,6 +152,6 @@
  </div>
   <!-- /.content-wrapper -->
   
- <!-- FOOTERrrrr login branch -->
+ <!-- Footer --> 
 
 <?php require APPROOT . '/views/inc/footer_edit.php'; ?>
