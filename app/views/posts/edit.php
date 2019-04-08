@@ -156,6 +156,8 @@
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
+  
+ <!-- Footer --> 
 
 <?php require APPROOT . '/views/inc/footer_edit.php'; ?>  
 <?php endif; ?>
