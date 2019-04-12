@@ -1,8 +1,3 @@
-<?php if(!isset($_SESSION['user_id'])) : ?>
-
-<?php redirect('../../users/login'); ?>
-
-<?php else: ?>
 <?php require APPROOT . '/views/inc/header_edit.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -159,5 +154,4 @@
   
  <!-- Footer --> 
 
-<?php require APPROOT . '/views/inc/footer_edit.php'; ?>  
-<?php endif; ?>
+<?php require APPROOT . '/views/inc/footer_edit.php'; ?>

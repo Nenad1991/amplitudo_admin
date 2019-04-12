@@ -35,20 +35,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
 
-<body >
-
-
-  
+<body>
 
     <!-- Logo -->
     
      <h1 class="text-center">Amplitudo</h1>
    
-
-
-   
-    
-    
     <div class="container col-md-4 col-md-offset-4">
     
      <form action="../users/login" method="post">

@@ -1,13 +1,14 @@
 <?php
   class Posts extends Controller {
     public function __construct(){
-      if(!isLoggedIn()){
-        redirect('users/login');
-      }
+      
 
       $this->postModel = $this->model('Post');
     }
     public function index(){
+        if(!isLoggedIn()){
+        redirect('login');
+      }
       
        // Get posts
       $posts = $this->postModel->getPosts();
@@ -21,6 +22,9 @@
       
       
   public function add(){
+      if(!isLoggedIn()){
+        redirect('../login');
+      }
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
           
           $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -165,6 +169,9 @@
       
       
     public function edit($id){
+      if(!isLoggedIn()){
+        redirect('../../login');
+      }
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST array
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);

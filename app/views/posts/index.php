@@ -1,5 +1,3 @@
-
-
 <?php require APPROOT . '/views/inc/header_index.php'; ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
