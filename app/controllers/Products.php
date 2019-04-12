@@ -1,13 +1,13 @@
 <?php
   class Products extends Controller {
     public function __construct(){
-      if(!isLoggedIn()){
-        redirect('users/login');
-      }
-
-      $this->productModel = $this->model('Product');
+      
+        $this->productModel = $this->model('Product');
     }
     public function index(){
+        if(!isLoggedIn()){
+        redirect('login');
+      }
       
        // Get products
       $products = $this->productModel->getProducts();
@@ -21,6 +21,9 @@
       
       
   public function add(){
+      if(!isLoggedIn()){
+        redirect('../login');
+      }
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
           
           $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -166,6 +169,9 @@
       
       
     public function edit($id){
+      if(!isLoggedIn()){
+        redirect('../../login');
+      }
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST array
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);

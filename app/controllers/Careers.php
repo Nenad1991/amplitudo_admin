@@ -1,13 +1,14 @@
 <?php
   class Careers extends Controller {
     public function __construct(){
-      if(!isLoggedIn()){
-        redirect('users/login');
-      }
+    
 
       $this->careerModel = $this->model('Career');
     }
     public function index(){
+        if(!isLoggedIn()){
+        redirect('login');
+      }
      
        // Get careers
       $careers = $this->careerModel->getCareers();
@@ -20,7 +21,10 @@
     }
       
       
-  public function add(){
+    public function add(){
+      if(!isLoggedIn()){
+        redirect('../login');
+      }
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
           
           $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -75,8 +79,6 @@
               $data['date_finish_err'] = 'Unesite kraj konkursa';
           }
           
-          
-          
           //Make sure no errors
           if(empty($data['title_err']) && empty($data['title_en_err']) && empty($data['text_err']) && empty($data['text_en_err']) && empty($data['img_err']) && empty($data['date_start_err']) && empty($data['date_finish_err'])){
             //Validated
@@ -124,6 +126,11 @@
       
       
     public function edit($id){
+        
+    if(!isLoggedIn()){
+        redirect('../../login');
+      }
+        
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST array
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);

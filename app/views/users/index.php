@@ -1,8 +1,3 @@
-<?php if(!isset($_SESSION['user_id'])) : ?>
-
-<?php redirect('users/login'); ?>
-
-<?php else: ?>
 <?php require APPROOT . '/views/inc/header_index.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
@@ -46,8 +41,6 @@
         </thead>
                 
         <tbody>    
-        
-        
             <?php foreach($data['users'] as $user) : ?>
               <tr>
                  <td><?php echo $user->id; ?></td> 
@@ -58,9 +51,6 @@
                  <td><a class='btn btn-info' href='users/edit/<?php echo $user->id;?>'>Izmjeni</a></td>
                  <td><button type="button" rel="<?php echo $user->id ?>" class="btn btn-danger delete_user_link" data-dismiss="modal">Izbriši</button></td>
              </tr>
-
-
-
             <?php endforeach; ?>
             
          </tbody>
@@ -72,6 +62,4 @@
   </div>
   <!-- /.content-wrapper -->
 
-  
 <?php require APPROOT . '/views/inc/footer_index.php'; ?>
-<?php endif; ?>
