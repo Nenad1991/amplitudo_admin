@@ -15,7 +15,7 @@
  
   <div class="card card-body bg-light mt-5">
     
-    <form action="../products/add" method="post" enctype="multipart/form-data">
+    <form action="<?php echo URLROOT; ?>/products/add" method="post" enctype="multipart/form-data">
       <div class="col-md-12">
           <div class="form-group">
                 <label for="img_cover">Upload cover fotografije: <sup>*</sup></label>

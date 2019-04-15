@@ -16,7 +16,7 @@
  
   <div class="card card-body bg-light mt-5">
    
-    <form action="../careers/add" method="post" enctype="multipart/form-data">
+    <form action="<?php echo URLROOT; ?>/careers/add" method="post" enctype="multipart/form-data">
       <div class="col-md-12">
         
             <div class="form-group">

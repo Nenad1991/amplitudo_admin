@@ -1,15 +1,14 @@
 <?php
   class Posts extends Controller {
     public function __construct(){
-      
+      if(!isLoggedIn()){
+        redirect('users/login');
+      }
 
       $this->postModel = $this->model('Post');
     }
     public function index(){
-        if(!isLoggedIn()){
-        redirect('login');
-      }
-      
+    
        // Get posts
       $posts = $this->postModel->getPosts();
 
@@ -22,9 +21,7 @@
       
       
   public function add(){
-      if(!isLoggedIn()){
-        redirect('../login');
-      }
+      
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
           
           $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -169,9 +166,7 @@
       
       
     public function edit($id){
-      if(!isLoggedIn()){
-        redirect('../../login');
-      }
+     
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST array
         $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -264,7 +259,7 @@
                 $img = $data['img'];
                 move_uploaded_file($data['img_tmp'], "../public/img/$img");  
                 flash('post_message', 'Izmjene se sacuvane');
-                redirect('../../posts');   
+                redirect('posts');   
               }else{
                   die('Something went wrong');
               }
@@ -322,13 +317,13 @@
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($this->postModel->deletePost($id)){
           flash('post_message', 'Blog je izbrisan');
-          redirect('../../posts');
+          redirect('posts');
         } else {
           die('Something went wrong');
         }
       } else {
          
-        redirect('../../posts');
+        redirect('posts');
       }
     }  
       

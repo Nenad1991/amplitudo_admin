@@ -43,7 +43,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
    
     <div class="container col-md-4 col-md-offset-4">
     
-     <form action="../users/login" method="post">
+     <form action="<?php echo URLROOT; ?>/users/login" method="post">
           <div class="form-group">
             <label for="email">Email: <sup>*</sup></label>
             <input type="email" name="email" class="form-control form-control-lg <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>" placeholder="Email">

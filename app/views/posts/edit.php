@@ -16,7 +16,7 @@
 
   <div class="card card-body bg-light mt-5">
 
-    <form action="../../posts/edit/<?php echo $data['id']; ?>" method="post" enctype="multipart/form-data">
+    <form action="<?php echo URLROOT; ?>/posts/edit/<?php echo $data['id']; ?>" method="post" enctype="multipart/form-data">
       <div class="col-md-12">
           <div class="form-group">
             <label for="author">Autor: <sup>*</sup></label>

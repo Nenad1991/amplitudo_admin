@@ -1,15 +1,16 @@
 <?php
   class Careers extends Controller {
     public function __construct(){
+        
+      if(!isLoggedIn()){
+        redirect('users/login');
+      }    
     
 
       $this->careerModel = $this->model('Career');
     }
     public function index(){
-        if(!isLoggedIn()){
-        redirect('login');
-      }
-     
+        
        // Get careers
       $careers = $this->careerModel->getCareers();
 
@@ -22,9 +23,7 @@
       
       
     public function add(){
-      if(!isLoggedIn()){
-        redirect('../login');
-      }
+      
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
           
           $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
@@ -86,7 +85,7 @@
                 $img = $data['img'];
                 move_uploaded_file($data['img_tmp'], "../public/img/$img");  
                 flash('post_message', 'Konkurs je dodat');
-                redirect('../careers');   
+                redirect('careers');   
               }else{
                   die('Something went wrong');
               }
@@ -127,9 +126,7 @@
       
     public function edit($id){
         
-    if(!isLoggedIn()){
-        redirect('../../login');
-      }
+    
         
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST array
@@ -194,7 +191,7 @@
                 $img = $data['img'];
                 move_uploaded_file($data['img_tmp'], "../public/img/$img");   
                 flash('post_message', 'Izmjene se sacuvane');
-                redirect('../../careers');   
+                redirect('careers');   
               }else{
                   die('Something went wrong');
               }
@@ -243,13 +240,13 @@
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($this->careerModel->deleteCareer($id)){
           flash('post_message', 'Konkurs je izbrisan');
-          redirect('../../careers');
+          redirect('careers');
         } else {
           die('Something went wrong');
         }
       } else {
          
-        redirect('../../careers');
+        redirect('careers');
       }
     }  
       

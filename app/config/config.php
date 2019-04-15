@@ -8,6 +8,6 @@
   // App Root
   define('APPROOT', dirname(dirname(__FILE__)));
   // URL Root
-  define('URLROOT', 'localhost/amplitudo_admin/public');
+  define('URLROOT', 'http://localhost/amplitudo_admin');
   // Site Name
   define('SITENAME', 'Amplitudo Admin');

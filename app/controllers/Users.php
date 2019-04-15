@@ -121,7 +121,7 @@
                 $img = $data['img'];
                 move_uploaded_file($data['img_tmp'], "../public/img/$img");
                 flash('post_message', 'Korisnik je dodat ');
-                redirect('../users');    
+                redirect('users');    
             }else{
                 die('Something went wrong');
             }
@@ -164,7 +164,7 @@
       
     public function edit($id){
       if(!isLoggedIn()){
-        redirect('../login');
+        redirect('users/login');
       }
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         // Sanitize POST array
@@ -269,7 +269,7 @@
                 $img = $data['img'];
                 move_uploaded_file($data['img_tmp'], "../public/img/$img");
                 flash('post_message', 'Izmjene se sacuvane');
-                redirect('../../users');   
+                redirect('users');   
               }else{
                   die('Something went wrong');
               }
@@ -338,7 +338,7 @@
           
         // Validate Email
         if(empty($data['email'])){
-          $data['email_err'] = 'Pleae enter email';
+          $data['email_err'] = 'Please enter email';
         }
 
         // Validate Password
@@ -395,7 +395,7 @@
       $_SESSION['user_profession'] = $user->profession;
       $_SESSION['user_power'] = $user->power;
       $_SESSION['user_img'] = $user->img;    
-      redirect('../');
+      redirect('');
     }
 
     public function logout(){
@@ -408,7 +408,7 @@
       unset($_SESSION['user_power']);
       unset($_SESSION['user_img']);    
       session_destroy();
-      redirect('../users/login');
+      redirect('users/login');
     }
 
     public function isLoggedIn(){
@@ -424,13 +424,13 @@
       if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($this->userModel->deleteUser($id)){
           flash('post_message', 'Korisnik je izbrisan');
-          redirect('../../users');
+          redirect('users');
         } else {
           die('Something went wrong');
         }
       } else {
       
-        redirect('../../users');
+        redirect('users');
       }
     }    
       
