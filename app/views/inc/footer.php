@@ -90,12 +90,12 @@
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 3 -->
-<script src="css/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="<?php echo URLROOT; ?>/css/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
-<script src="css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="<?php echo URLROOT; ?>/css/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
-<script src="css/dist/js/adminlte.min.js"></script>
-<script src="js/main.js"></script>    
+<script src="<?php echo URLROOT; ?>/css/dist/js/adminlte.min.js"></script>
+<script src="<?php echo URLROOT; ?>/js/main.js"></script>    
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

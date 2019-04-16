@@ -1,4 +1,4 @@
-<?php require APPROOT . '/views/inc/header_index.php'; ?>
+<?php require APPROOT . '/views/inc/header.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -62,4 +62,4 @@
   </div>
   <!-- /.content-wrapper -->
 
-<?php require APPROOT . '/views/inc/footer_index.php'; ?>
+<?php require APPROOT . '/views/inc/footer.php'; ?>

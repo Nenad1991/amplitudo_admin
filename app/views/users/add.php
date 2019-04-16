@@ -1,4 +1,4 @@
-<?php require APPROOT . '/views/inc/header_add.php'; ?>
+<?php require APPROOT . '/views/inc/header.php'; ?>
 
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -22,11 +22,11 @@
                 <input type="text" name="username" class="form-control form-control-lg <?php echo (!empty($data['username_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['username']; ?>">
                 <span class="invalid-feedback"><?php echo $data['username_err']; ?></span>
             </div>
-                <div class="form-group">
+            <div class="form-group">
                 <label for="email">Email: <sup>*</sup></label>
                 <input type="email" name="email" class="form-control form-control-lg <?php echo (!empty($data['email_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['email']; ?>">
                 <span class="invalid-feedback"><?php echo $data['email_err']; ?></span>
-                </div>
+            </div>
             <div class="form-group">
                 <label for="password">Lozinka: <sup>*</sup></label>
                 <input type="password" name="password" class="form-control form-control-lg <?php echo (!empty($data['password_err'])) ? 'is-invalid' : ''; ?>" value="<?php echo $data['password']; ?>">
@@ -101,4 +101,4 @@
     <!-- /.content -->
 </div>
   <!-- /.content-wrapper -->     
-<?php require APPROOT . '/views/inc/footer_add.php'; ?>
+<?php require APPROOT . '/views/inc/footer.php'; ?>

@@ -10,18 +10,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>Admin</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="css/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="css/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/bower_components/font-awesome/css/font-awesome.min.css">
   <!-- Ionicons -->
-  <link rel="stylesheet" href="css/bower_components/Ionicons/css/ionicons.min.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="css/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect. -->
-  <link rel="stylesheet" href="css/dist/css/skins/skin-blue.min.css">
-  <link rel="stylesheet" href="css/style.css">    
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/dist/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="<?php echo URLROOT; ?>/css/style.css">    
 
     
 
@@ -63,7 +63,7 @@ desired effect
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="/amplitudo_admin" class="logo">
+    <a href="<?php echo URLROOT; ?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -84,9 +84,9 @@ desired effect
           <!-- User Account Menu -->
           <li class="user user-menu">
             <!-- Menu Toggle Button -->
-            <a href="users/edit/<?php echo $_SESSION['user_id'] ?>">
+            <a href="<?php echo URLROOT; ?>/users/edit/<?php echo $_SESSION['user_id'] ?>">
               <!-- The user image in the navbar-->
-              <img src="img/<?php echo $_SESSION['user_img'] ?>" class="user-image" alt="User Image">
+              <img src="<?php echo URLROOT; ?>/img/<?php echo $_SESSION['user_img'] ?>" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs"><?php echo $_SESSION['user_firstname']." ". $_SESSION['user_lastname']; ?></span>
             </a>
@@ -94,7 +94,7 @@ desired effect
           </li>
           <!-- Control Sidebar Toggle Button -->
           <li>
-            <a href="users/logout"><i class="fa fa-sign-out"></i> Logout</a>
+            <a href="<?php echo URLROOT; ?>/users/logout"><i class="fa fa-sign-out"></i> Logout</a>
           </li>
         </ul>
       </div>
@@ -109,7 +109,7 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="img/<?php echo $_SESSION['user_img'] ?>" class="img-circle" alt="User Image">
+          <img src="<?php echo URLROOT; ?>/img/<?php echo $_SESSION['user_img'] ?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p><?php echo $_SESSION['user_firstname']." ". $_SESSION['user_lastname']; ?></p>
@@ -124,11 +124,11 @@ desired effect
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li ><a href="products"><i class="fa fa-link"></i> <span>Proizvodi</span></a></li>
-        <li ><a href="posts"><i class="fa fa-link"></i> <span>Blog</span></a></li>
-        <li><a href="careers"><i class="fa fa-link"></i> <span>Karijera</span></a></li>
+        <li ><a href="<?php echo URLROOT; ?>/products"><i class="fa fa-link"></i> <span>Proizvodi</span></a></li>
+        <li ><a href="<?php echo URLROOT; ?>/posts"><i class="fa fa-link"></i> <span>Blog</span></a></li>
+        <li><a href="<?php echo URLROOT; ?>/careers"><i class="fa fa-link"></i> <span>Karijera</span></a></li>
         <?php if($_SESSION['user_power'] == 'administrator') : ?>  
-        <li><a href="users"><i class="fa fa-link"></i> <span>Korisnici</span></a></li>  
+        <li><a href="<?php echo URLROOT; ?>/users"><i class="fa fa-link"></i> <span>Korisnici</span></a></li>  
        <?php endif; ?> 
       </ul>
       <!-- /.sidebar-menu -->
